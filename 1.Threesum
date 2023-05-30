@@ -1,0 +1,55 @@
+#question 1
+def twoSum(nums, target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+
+# Example usage
+nums = [2, 7, 11, 15]
+target = 9
+result = twoSum(nums, target)
+print(result)
+
+#TC - O(N^2)  AS 2 FOR LOOPS
+#SC - 0(1)    AS NO EXTRA SPACES REQUIRED
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+#question 1
+#idea2
+#2+7=9
+#9-2=7
+#9-7=2
+
+def twoSum(nums, target):
+    num_indices = {}#dict is used to store num,num's index
+    
+    for i, num in enumerate(nums):
+        print(num_indices)
+        print()
+        res = target - num                                                       #res=9-2=7,                                                                            #9-7=2
+        print(f"res {res} = target {target} - num {num}")
+        if res in num_indices:                                                                                                                                          #2 in dic
+            print(f"since res:{res} in dict return res_index,num_index{[num_indices[res], i]}")
+            print() 
+                                                                                                                                                                        #index[2] , 1 = 0 , 1
+            return [num_indices[res], i]  
+        print(f"since res {res} not in dict add input num and its index in dict")                                        
+        num_indices[num] = i                                                    # 7 not in dic so add num,index---> index[2]=0 in dic which is equal to {2 : 0}
+    return []
+
+# Example usage
+nums = [2, 7, 11, 15]
+target = 9
+result = twoSum(nums, target)
+print(f"The index of two numbers which gives 9 is : {result}")
+
+#TC - O(N)    AS 1 FOR LOOP
+#SC - 0(1)    AS NO EXTRA SPACES REQUIRED
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#output2
+nums = [5, 7, 4, 15]
+target = 9
+result = twoSum(nums, target)
+print(result)
+
