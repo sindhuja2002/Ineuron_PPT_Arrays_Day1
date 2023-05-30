@@ -1,0 +1,33 @@
+#question 6
+def contains_duplicate(nums):
+    # Sort the array in non-decreasing order
+    nums.sort()
+    
+    # Check for adjacent elements that are equal
+    for i in range(len(nums) - 1):
+        if nums[i] == nums[i + 1]:
+            return True
+    
+    return False
+
+nums = [1, 2, 3, 1]
+print(contains_duplicate(nums))
+
+#TC - O(nlogn)
+#SC - O(1)
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+#question 6
+#idea2
+def contains_duplicate(nums):
+    a = list()
+    for i in nums:
+        if i in a:
+            return True
+        a.append(i)
+    return False
+
+nums = [1, 2, 3, 1]
+print(contains_duplicate(nums))
+
+#TC - O(n^2)
+#SC - O(n)
